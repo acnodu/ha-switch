@@ -16,7 +16,8 @@ class MushroomDysonPowerCard extends HTMLElement {
 
     this._card.setConfig({
       entity: this._config.entity,
-      primary: this._config.name || entity?.attributes.friendly_name || "Device",
+      primary:
+        this._config.name || entity?.attributes.friendly_name || "Device",
       icon: this._config.icon || "mdi:fan",
       icon_color: entity?.state === "on" ? "amber" : "grey",
       secondary: entity?.state === "on" ? `${power} W` : "",
@@ -28,7 +29,9 @@ class MushroomDysonPowerCard extends HTMLElement {
     this._card.hass = hass;
   }
 
-  getCardSize() { return 2; }
+  getCardSize() {
+    return 2;
+  }
 }
 
 customElements.define("mushroom-dyson-power-card", MushroomDysonPowerCard);
